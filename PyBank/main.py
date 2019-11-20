@@ -8,6 +8,7 @@ with open(filepath, "r") as in_file:
 
     header = next(in_csv)
 
+    #convert data to a list
     l = list(in_csv)
 
     #total count
@@ -17,7 +18,7 @@ with open(filepath, "r") as in_file:
     date = [i[0] for i in l]
     prof_loss = [i[1] for i in l] 
     
-    # using list comprehension to perform convert string element to integer to get the total
+    # using list comprehension to convert string element to integer to get the total
     int_prof_loss = [int(i) for i in prof_loss] 
     
     #compute for average change
@@ -26,8 +27,8 @@ with open(filepath, "r") as in_file:
         return sum(lst) / len(lst) 
     average = Average(avg_change)
 
-    #merging two lists into one list starting at index 1 for date because index 0 of 
-    # avg_change is null
+    #merging two lists into a new list starting at index 1 for date because index 0 of 
+    #avg_change is null
     new_l = zip(date[1:], avg_change)
     new_list = list(new_l)
     
@@ -36,7 +37,7 @@ with open(filepath, "r") as in_file:
         return element2[1]
     new_list.sort(key=sortlist)
 
-    #create new lists to get the required output format
+    #assign maximum and minimum values to variables to get the required output format
     increase = new_list[-1]
     decrease = new_list[0]
 
