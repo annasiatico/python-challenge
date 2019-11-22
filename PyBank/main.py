@@ -27,7 +27,7 @@ with open(filepath, "r") as in_file:
     int_prof_loss = [int(i) for i in prof_loss] 
     print ("Total: " + "$" + str(sum(int_prof_loss)))
     
-    #compute for average change
+    #compute for average change using List Comprehension
     avg_change = [int_prof_loss[i+1]-int_prof_loss[i] for i in range(len(int_prof_loss)-1)]
     def Average(lst): 
         return sum(lst) / len(lst) 
@@ -50,7 +50,7 @@ with open(filepath, "r") as in_file:
     print ("Greatest Increase in Profits: " + str(increase[0]) + " " + "($" + str(increase[1]) + ")")
     print ("Greatest Increase in Profits: " + str(decrease[0]) + " " + "($" + str(decrease[1]) + ")")
 
-    #export results to terminal and a text file
+    #export results to a text file
     output = open('output.txt', 'w')
 
     print ("Financial Analysis", file = output)
