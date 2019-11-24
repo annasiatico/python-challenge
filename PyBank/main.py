@@ -43,12 +43,10 @@ with open(filepath, "r") as in_file:
     def sortlist(element2):
         return element2[1]
     new_list.sort(key=sortlist)
+    
 
-    #assign maximum and minimum values to variables to get the required output format
-    increase = new_list[-1]
-    decrease = new_list[0]
-    print ("Greatest Increase in Profits: " + str(increase[0]) + " " + "($" + str(increase[1]) + ")")
-    print ("Greatest Increase in Profits: " + str(decrease[0]) + " " + "($" + str(decrease[1]) + ")")
+    print ("Greatest Increase in Profits: " + str(new_list[-1][0]) + " " + "($" + str(new_list[-1][1]) + ")")
+    print ("Greatest Increase in Profits: " + str(new_list[0][0]) + " " + "($" + str(new_list[0][1]) + ")")
 
     #export results to a text file
     output = open('output.txt', 'w')
@@ -58,8 +56,8 @@ with open(filepath, "r") as in_file:
     print ("Total Months: " + str(count_of_row), file = output)
     print ("Total: " + "$" + str(sum(int_prof_loss)), file = output)
     print ("Average Change: " + "$" + str(format(average, '.2f')), file = output)
-    print ("Greatest Increase in Profits: " + str(increase[0]) + " " + "($" + str(increase[1]) + ")", file = output)
-    print ("Greatest Increase in Profits: " + str(decrease[0]) + " " + "($" + str(decrease[1]) + ")", file = output)
+    print ("Greatest Increase in Profits: " + str(new_list[-1][0]) + " " + "($" + str(new_list[-1][1]) + ")", file = output)
+    print ("Greatest Increase in Profits: " + str(new_list[0][0]) + " " + "($" + str(new_list[0][1]) + ")", file = output)
 
     
     
