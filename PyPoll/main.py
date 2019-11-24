@@ -10,9 +10,13 @@ with open(filepath, "r") as in_file:
 
     l = list(in_csv)
 
+    print ("Election Results")
+    print ("---------------------------")
 
     #get total number of votes cast
     count_of_row = len(l)
+    print ("Total Votes: " + str(count_of_row))
+    print ("---------------------------")
     
     #create a new list for candidates
     candidates = [i[2] for i in l]
@@ -38,12 +42,7 @@ with open(filepath, "r") as in_file:
     #calulate and format percentage of votes each candidate won
     percent = [format((count_candidate[i]/count_of_row * 100), '.3f') for i in range(len(count_candidate))]
     
-
-    # return results to terminal
-    print ("Election Results")
-    print ("---------------------------")
-    print ("Total Votes: " + str(count_of_row))
-    print ("---------------------------")
+    #return results to terminal
     print (str(new_list[3][0]) + ": " + str(percent[3]) + "%" + " " + "(" + str(count_candidate[3]) + ")")
     print (str(new_list[2][0]) + ": " + str(percent[2]) + "%" + " " + "(" + str(count_candidate[2]) + ")")
     print (str(new_list[1][0]) + ": " + str(percent[1]) + "%" + " " + "(" + str(count_candidate[1]) + ")")
