@@ -88,7 +88,7 @@ with open(filepath, "r") as in_file:
     change_state = [us_state_abbrev.get(i[4],'') for i in l]
 
 
-    new_l = zip(*(emp_id, first_name, last_name, change_date, change_SSN, change_state))
+    new_l = zip(emp_id, first_name, last_name, change_date, change_SSN, change_state)
     new_list = list(new_l)
 
 
